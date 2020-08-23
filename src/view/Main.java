@@ -321,7 +321,7 @@ public class Main extends javax.swing.JFrame {
         bNovoAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/plus-black-symbol.png"))); // NOI18N
         bNovoAgenda.setText("Novo");
         bNovoAgenda.setBorder(null);
-        bNovoAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNovoAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNovoAgenda.setDoubleBuffered(true);
         bNovoAgenda.setFocusPainted(false);
         bNovoAgenda.setFocusable(false);
@@ -343,7 +343,7 @@ public class Main extends javax.swing.JFrame {
         bEditarAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit.png"))); // NOI18N
         bEditarAgenda.setText("Editar");
         bEditarAgenda.setBorder(null);
-        bEditarAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEditarAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEditarAgenda.setDoubleBuffered(true);
         bEditarAgenda.setFocusPainted(false);
         bEditarAgenda.setFocusable(false);
@@ -362,12 +362,18 @@ public class Main extends javax.swing.JFrame {
         lPesquisarAgenda.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lPesquisarAgenda.setText("Pesquisar: ");
 
+        tBuscarAgenda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tBuscarAgendaKeyPressed(evt);
+            }
+        });
+
         bBuscarAgenda.setBackground(new java.awt.Color(0, 102, 52));
         bBuscarAgenda.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         bBuscarAgenda.setForeground(new java.awt.Color(255, 255, 255));
         bBuscarAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search.png"))); // NOI18N
         bBuscarAgenda.setBorder(null);
-        bBuscarAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bBuscarAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bBuscarAgenda.setDoubleBuffered(true);
         bBuscarAgenda.setFocusPainted(false);
         bBuscarAgenda.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -397,7 +403,7 @@ public class Main extends javax.swing.JFrame {
         bRemoverAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/trash.png"))); // NOI18N
         bRemoverAgenda.setText("Excluir");
         bRemoverAgenda.setBorder(null);
-        bRemoverAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bRemoverAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bRemoverAgenda.setDoubleBuffered(true);
         bRemoverAgenda.setFocusPainted(false);
         bRemoverAgenda.setFocusable(false);
@@ -405,11 +411,11 @@ public class Main extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bRemoverAgendaMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bRemoverAgendaMouseEntered(evt);
-            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 bRemoverAgendaMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bRemoverAgendaMouseEntered(evt);
             }
         });
 
@@ -456,8 +462,12 @@ public class Main extends javax.swing.JFrame {
 
         mainAgenda.setBackground(new java.awt.Color(255, 255, 255));
 
-        scrollPanelAgenda.setBackground(new java.awt.Color(255, 255, 255));
         scrollPanelAgenda.setBorder(null);
+        scrollPanelAgenda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                scrollPanelAgendaMouseClicked(evt);
+            }
+        });
 
         tableAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -472,6 +482,11 @@ public class Main extends javax.swing.JFrame {
         ));
         tableAgenda.setIntercellSpacing(new java.awt.Dimension(3, 3));
         tableAgenda.setRowHeight(30);
+        tableAgenda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableAgendaMouseClicked(evt);
+            }
+        });
         scrollPanelAgenda.setViewportView(tableAgenda);
 
         javax.swing.GroupLayout mainAgendaLayout = new javax.swing.GroupLayout(mainAgenda);
@@ -551,7 +566,7 @@ public class Main extends javax.swing.JFrame {
         bNovoPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/plus-black-symbol.png"))); // NOI18N
         bNovoPaciente.setText("Novo");
         bNovoPaciente.setBorder(null);
-        bNovoPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNovoPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNovoPaciente.setDoubleBuffered(true);
         bNovoPaciente.setFocusPainted(false);
         bNovoPaciente.setFocusable(false);
@@ -573,7 +588,7 @@ public class Main extends javax.swing.JFrame {
         bEditarPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit.png"))); // NOI18N
         bEditarPaciente.setText("Editar");
         bEditarPaciente.setBorder(null);
-        bEditarPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEditarPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEditarPaciente.setDoubleBuffered(true);
         bEditarPaciente.setFocusPainted(false);
         bEditarPaciente.setFocusable(false);
@@ -598,7 +613,7 @@ public class Main extends javax.swing.JFrame {
         bBuscarPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search.png"))); // NOI18N
         bBuscarPaciente.setText("Pesquisar");
         bBuscarPaciente.setBorder(null);
-        bBuscarPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bBuscarPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bBuscarPaciente.setDoubleBuffered(true);
         bBuscarPaciente.setFocusPainted(false);
         bBuscarPaciente.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -660,7 +675,6 @@ public class Main extends javax.swing.JFrame {
 
         mainPaciente.setBackground(new java.awt.Color(255, 255, 255));
 
-        scrollPanelPaciente.setBackground(new java.awt.Color(255, 255, 255));
         scrollPanelPaciente.setBorder(null);
 
         tablePacientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -753,7 +767,7 @@ public class Main extends javax.swing.JFrame {
         bNovoProfissional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/plus-black-symbol.png"))); // NOI18N
         bNovoProfissional.setText("Novo");
         bNovoProfissional.setBorder(null);
-        bNovoProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNovoProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNovoProfissional.setDoubleBuffered(true);
         bNovoProfissional.setFocusPainted(false);
         bNovoProfissional.setFocusable(false);
@@ -775,7 +789,7 @@ public class Main extends javax.swing.JFrame {
         bEditarProfissional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit.png"))); // NOI18N
         bEditarProfissional.setText("Editar");
         bEditarProfissional.setBorder(null);
-        bEditarProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEditarProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEditarProfissional.setDoubleBuffered(true);
         bEditarProfissional.setFocusPainted(false);
         bEditarProfissional.setFocusable(false);
@@ -799,7 +813,7 @@ public class Main extends javax.swing.JFrame {
         bBuscarProfissional.setForeground(new java.awt.Color(255, 255, 255));
         bBuscarProfissional.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search.png"))); // NOI18N
         bBuscarProfissional.setBorder(null);
-        bBuscarProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bBuscarProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bBuscarProfissional.setDoubleBuffered(true);
         bBuscarProfissional.setFocusPainted(false);
         bBuscarProfissional.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -833,7 +847,7 @@ public class Main extends javax.swing.JFrame {
         bListarEspecialidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/portfolio_white.png"))); // NOI18N
         bListarEspecialidades.setText("Especialidades");
         bListarEspecialidades.setBorder(null);
-        bListarEspecialidades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bListarEspecialidades.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bListarEspecialidades.setDoubleBuffered(true);
         bListarEspecialidades.setFocusPainted(false);
         bListarEspecialidades.setFocusable(false);
@@ -887,7 +901,6 @@ public class Main extends javax.swing.JFrame {
 
         mainProfissional.setBackground(new java.awt.Color(255, 255, 255));
 
-        scrollPanelProfissional.setBackground(new java.awt.Color(255, 255, 255));
         scrollPanelProfissional.setBorder(null);
         scrollPanelProfissional.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
@@ -981,7 +994,7 @@ public class Main extends javax.swing.JFrame {
         bNovoUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/plus-black-symbol.png"))); // NOI18N
         bNovoUsuario.setText("Novo");
         bNovoUsuario.setBorder(null);
-        bNovoUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNovoUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNovoUsuario.setDoubleBuffered(true);
         bNovoUsuario.setFocusPainted(false);
         bNovoUsuario.setFocusable(false);
@@ -1003,7 +1016,7 @@ public class Main extends javax.swing.JFrame {
         bEditarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit.png"))); // NOI18N
         bEditarUsuario.setText("Editar");
         bEditarUsuario.setBorder(null);
-        bEditarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEditarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEditarUsuario.setDoubleBuffered(true);
         bEditarUsuario.setFocusPainted(false);
         bEditarUsuario.setFocusable(false);
@@ -1028,7 +1041,7 @@ public class Main extends javax.swing.JFrame {
         bBuscarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search.png"))); // NOI18N
         bBuscarUsuario.setText("Pesquisar");
         bBuscarUsuario.setBorder(null);
-        bBuscarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bBuscarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bBuscarUsuario.setDoubleBuffered(true);
         bBuscarUsuario.setFocusPainted(false);
         bBuscarUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1090,7 +1103,6 @@ public class Main extends javax.swing.JFrame {
 
         mainUsuario.setBackground(new java.awt.Color(255, 255, 255));
 
-        scrollPanelUsuario.setBackground(new java.awt.Color(255, 255, 255));
         scrollPanelUsuario.setBorder(null);
         scrollPanelUsuario.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
@@ -1186,7 +1198,7 @@ public class Main extends javax.swing.JFrame {
         bNovoConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/plus-black-symbol.png"))); // NOI18N
         bNovoConsulta.setText("Novo");
         bNovoConsulta.setBorder(null);
-        bNovoConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNovoConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNovoConsulta.setDoubleBuffered(true);
         bNovoConsulta.setFocusPainted(false);
         bNovoConsulta.setFocusable(false);
@@ -1208,7 +1220,7 @@ public class Main extends javax.swing.JFrame {
         bEditarConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit.png"))); // NOI18N
         bEditarConsulta.setText("Editar");
         bEditarConsulta.setBorder(null);
-        bEditarConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEditarConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEditarConsulta.setDoubleBuffered(true);
         bEditarConsulta.setFocusPainted(false);
         bEditarConsulta.setFocusable(false);
@@ -1233,7 +1245,7 @@ public class Main extends javax.swing.JFrame {
         bBuscarConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search.png"))); // NOI18N
         bBuscarConsulta.setText("Pesquisar");
         bBuscarConsulta.setBorder(null);
-        bBuscarConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bBuscarConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bBuscarConsulta.setDoubleBuffered(true);
         bBuscarConsulta.setFocusPainted(false);
         bBuscarConsulta.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1267,7 +1279,7 @@ public class Main extends javax.swing.JFrame {
         bHistoricoConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/historico.png"))); // NOI18N
         bHistoricoConsulta.setText("Histórico");
         bHistoricoConsulta.setBorder(null);
-        bHistoricoConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bHistoricoConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bHistoricoConsulta.setDoubleBuffered(true);
         bHistoricoConsulta.setFocusPainted(false);
         bHistoricoConsulta.setFocusable(false);
@@ -1319,13 +1331,10 @@ public class Main extends javax.swing.JFrame {
         );
 
         mainFisioterapia.setBackground(new java.awt.Color(255, 255, 255));
-        mainFisioterapia.setPreferredSize(null);
 
-        scrollPanelConsulta.setBackground(new java.awt.Color(255, 255, 255));
         scrollPanelConsulta.setBorder(null);
         scrollPanelConsulta.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         scrollPanelConsulta.setMinimumSize(null);
-        scrollPanelConsulta.setPreferredSize(null);
 
         tableConsultas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1420,7 +1429,7 @@ public class Main extends javax.swing.JFrame {
         bBuscarAvaliacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search.png"))); // NOI18N
         bBuscarAvaliacao.setText("Pesquisar");
         bBuscarAvaliacao.setBorder(null);
-        bBuscarAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bBuscarAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bBuscarAvaliacao.setDoubleBuffered(true);
         bBuscarAvaliacao.setFocusPainted(false);
         bBuscarAvaliacao.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1454,7 +1463,7 @@ public class Main extends javax.swing.JFrame {
         bNovoAvaliacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/plus-black-symbol.png"))); // NOI18N
         bNovoAvaliacao.setText("Novo");
         bNovoAvaliacao.setBorder(null);
-        bNovoAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNovoAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNovoAvaliacao.setDoubleBuffered(true);
         bNovoAvaliacao.setFocusPainted(false);
         bNovoAvaliacao.setFocusable(false);
@@ -1476,7 +1485,7 @@ public class Main extends javax.swing.JFrame {
         bEditarAvaliacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit.png"))); // NOI18N
         bEditarAvaliacao.setText("Editar");
         bEditarAvaliacao.setBorder(null);
-        bEditarAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEditarAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEditarAvaliacao.setDoubleBuffered(true);
         bEditarAvaliacao.setFocusPainted(false);
         bEditarAvaliacao.setFocusable(false);
@@ -1513,12 +1522,12 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(navButtonsAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(navButtonsAvaliacaoLayout.createSequentialGroup()
-                        .addGroup(navButtonsAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tBuscarAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(navButtonsAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(navButtonsAvaliacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(bNovoAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(bEditarAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lPesquisarAvaliacao)))
+                                .addComponent(lPesquisarAvaliacao))
+                            .addComponent(tBuscarAvaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(bBuscarAvaliacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1526,7 +1535,6 @@ public class Main extends javax.swing.JFrame {
 
         mainAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
 
-        scrollPanelAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
         scrollPanelAvaliacao.setBorder(null);
         scrollPanelAvaliacao.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         scrollPanelAvaliacao.setMinimumSize(null);
@@ -1621,7 +1629,7 @@ public class Main extends javax.swing.JFrame {
         bNovoProcedimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/plus-black-symbol.png"))); // NOI18N
         bNovoProcedimento.setText("Novo");
         bNovoProcedimento.setBorder(null);
-        bNovoProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bNovoProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bNovoProcedimento.setDoubleBuffered(true);
         bNovoProcedimento.setFocusPainted(false);
         bNovoProcedimento.setFocusable(false);
@@ -1644,7 +1652,7 @@ public class Main extends javax.swing.JFrame {
         bEditarProcedimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit.png"))); // NOI18N
         bEditarProcedimento.setText("Editar");
         bEditarProcedimento.setBorder(null);
-        bEditarProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bEditarProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bEditarProcedimento.setDoubleBuffered(true);
         bEditarProcedimento.setFocusPainted(false);
         bEditarProcedimento.setFocusable(false);
@@ -1667,7 +1675,7 @@ public class Main extends javax.swing.JFrame {
         bRemoverProcedimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/trash.png"))); // NOI18N
         bRemoverProcedimento.setText("Excluir");
         bRemoverProcedimento.setBorder(null);
-        bRemoverProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bRemoverProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bRemoverProcedimento.setDoubleBuffered(true);
         bRemoverProcedimento.setFocusPainted(false);
         bRemoverProcedimento.setFocusable(false);
@@ -1689,7 +1697,7 @@ public class Main extends javax.swing.JFrame {
         bBuscarProcedimento.setForeground(new java.awt.Color(255, 255, 255));
         bBuscarProcedimento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/search.png"))); // NOI18N
         bBuscarProcedimento.setBorder(null);
-        bBuscarProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bBuscarProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bBuscarProcedimento.setDoubleBuffered(true);
         bBuscarProcedimento.setFocusPainted(false);
         bBuscarProcedimento.setRequestFocusEnabled(false);
@@ -1757,7 +1765,6 @@ public class Main extends javax.swing.JFrame {
 
         mainProcedimento.setBackground(new java.awt.Color(255, 255, 255));
 
-        scrollPanelProcedimento.setBackground(new java.awt.Color(255, 255, 255));
         scrollPanelProcedimento.setBorder(null);
         scrollPanelProcedimento.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         scrollPanelProcedimento.setMinimumSize(null);
@@ -1835,7 +1842,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pAgenda.setBackground(new java.awt.Color(255, 255, 255));
-        pAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pAgenda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pAgenda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pAgendaMouseClicked(evt);
@@ -1873,7 +1880,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(pAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 200, 50));
 
         pPaciente.setBackground(new java.awt.Color(255, 255, 255));
-        pPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pPacienteMouseClicked(evt);
@@ -1911,7 +1918,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(pPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 200, 50));
 
         pConsulta.setBackground(new java.awt.Color(255, 255, 255));
-        pConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pConsulta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pConsultaMouseClicked(evt);
@@ -1949,7 +1956,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(pConsulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 200, 50));
 
         pAvaliacao.setBackground(new java.awt.Color(255, 255, 255));
-        pAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pAvaliacao.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pAvaliacao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pAvaliacaoMouseClicked(evt);
@@ -1987,7 +1994,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(pAvaliacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 200, 50));
 
         pUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        pUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pUsuarioMouseClicked(evt);
@@ -2025,7 +2032,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(pUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 200, 50));
 
         pSair.setBackground(new java.awt.Color(255, 255, 255));
-        pSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pSair.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pSairMouseClicked(evt);
@@ -2063,7 +2070,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(pSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 200, 50));
 
         pProfissional.setBackground(new java.awt.Color(255, 255, 255));
-        pProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pProfissional.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pProfissional.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pProfissionalMouseClicked(evt);
@@ -2101,7 +2108,7 @@ public class Main extends javax.swing.JFrame {
         sidenav.add(pProfissional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 200, 50));
 
         pProcedimento.setBackground(new java.awt.Color(255, 255, 255));
-        pProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pProcedimento.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pProcedimento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pProcedimentoMouseClicked(evt);
@@ -2598,7 +2605,7 @@ public class Main extends javax.swing.JFrame {
     private void bNovoAgendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bNovoAgendaMouseClicked
         int row = this.tableAgenda.getSelectedRow();
         int column = this.tableAgenda.getSelectedColumn();
-        if (row > -1  && column > 0) {
+        if (row >=0  && column > 0) {
             Agenda a = this.tableModelAgenda.getAgendamento(row, column);
             String dateTime = Formatacao.date2StringScreen(tDate.getDate()) + " " + Formatacao.time2String(horarios.get(row).getHora());
             a.setDataAgendamento(new java.sql.Timestamp(Formatacao.string2DateTime(dateTime).getTime()));
@@ -3036,6 +3043,20 @@ public class Main extends javax.swing.JFrame {
     private void bEditarAvaliacaoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bEditarAvaliacaoMouseExited
         bEditarAvaliacao.setBackground(Color.decode("#006634"));
     }//GEN-LAST:event_bEditarAvaliacaoMouseExited
+
+    private void scrollPanelAgendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scrollPanelAgendaMouseClicked
+        bEditarAgenda.doClick();
+    }//GEN-LAST:event_scrollPanelAgendaMouseClicked
+
+    private void tableAgendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAgendaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableAgendaMouseClicked
+
+    private void tBuscarAgendaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tBuscarAgendaKeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            searchAgendamentos();
+        }
+    }//GEN-LAST:event_tBuscarAgendaKeyPressed
 
     /**
      * @param args the command line arguments
